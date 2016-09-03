@@ -57,7 +57,7 @@ function drawPiano(array) {
       // Calculate frequency from fft bin
       var freq = context.sampleRate / analyser.fftSize * i
 
-      // Only start with a frequency ~27hz. Piano starts at 27Hz.
+      // Only start with a frequency ~27hz. Piano starts at 27.5Hz.
       if (freq > 27) {
         var noteNum = Math.round(12 * (Math.log2(freq/442))) + 49 -1
 
