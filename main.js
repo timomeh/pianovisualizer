@@ -8,7 +8,7 @@ sourceNode.connect(analyser)
 sourceNode.connect(context.destination)
 
 
-// Download file as wav
+// Download file as mp3 from archive.org
 
 var request = new XMLHttpRequest()
 request.open('GET', 'https://archive.org/download/ClairDeLunedebussy/2009-03-30-clairdelune.mp3', true)
