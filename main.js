@@ -68,7 +68,7 @@ function drawPiano(array) {
   }
 
   // Draw all white keys
-  var nextKey = 0
+  var nextWhiteKey = 0
   for (var k = 0; k < 88; k++) {
 
     var fill = "#ffffff"
@@ -79,14 +79,15 @@ function drawPiano(array) {
     if (k%12 == 1 || k%12 == 4 || k%12 == 6 || k%12 == 9 || k%12 == 11) {
       // intentionally left blank.
     } else {
-      shape.graphics.beginStroke("#000000").setStrokeStyle(1).beginFill(fill).drawRect(nextKey*keyWidth, 0, keyWidth, 200)
-      nextKey++
+      nextWhiteKey++
+      shape.graphics.beginStroke("#000000").setStrokeStyle(1).beginFill(fill).drawRect(nextWhiteKey*keyWidth, 0, keyWidth, 200)
+
     }
     stage.addChild(shape)
   }
 
   // Draw all black keys
-  var nextKey = 0
+  var nextWhiteKey = 0
   for (var k = 0; k < 88; k++) {
     var fill = "#000000"
     if (pressedKeys[k] > 0) {
@@ -94,9 +95,9 @@ function drawPiano(array) {
     }
     var shape = new createjs.Shape()
     if (k%12 == 1 || k%12 == 4 || k%12 == 6 || k%12 == 9 || k%12 == 11) {
-      shape.graphics.beginStroke("#000000").setStrokeStyle(1).beginFill(fill).drawRect(nextKey*keyWidth + keyWidth/2 + keyWidth/4, 0, keyWidth/2, 100);
+      shape.graphics.beginStroke("#000000").setStrokeStyle(1).beginFill(fill).drawRect(nextWhiteKey*keyWidth + keyWidth/2 + keyWidth/4, 0, keyWidth/2, 100);
     } else {
-      nextKey++
+      nextWhiteKey++
     }
     stage.addChild(shape)
   }
